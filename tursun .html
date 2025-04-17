@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Өдөр тооцоолол</title>
+</head>
+<body>
+  <h1>Чи хэдэн өдөр амьдарч вэ?</h1>
+  <script>
+    var birth = prompt("Төрсөн өдрөө оруулна уу (жишээ: 2005-04-16):");
+
+    var today = new Date();
+
+
+    var birthDate = new Date(birth);
+
+
+    var diffTime = today - birthDate;
+
+    var diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    document.write("Та төрсөн цагаасаа хойш нийт <b>" + diffDays + "</b> өдөр амьдарч байна.");
+  </script>
+</body>
+</html>

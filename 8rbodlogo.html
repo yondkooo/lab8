@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Петягийн ялалт</title>
+</head>
+<body>
+    <h3>Петягийн хожих боломж</h3>
+    <label>Зоосны тоо (n): </label>
+    <input type="number" id="n">
+    <button onclick="findWinningMove()">Ол</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findWinningMove() {
+            let n = parseInt(document.getElementById("n").value);
+            let answer = 0;
+
+            for (let k = 1; k < n; k++) {
+                let remaining = n - k;
+                let lose = false;
+
+                while (remaining > 0) {
+                    remaining -= (k + 1); 
+                    if (remaining <= 0) {
+                        lose = true;
+                        break;
+                    }
+                    remaining -= k; 
+                }
+
+                if (!lose) {
+                    answer = k;
+                    break;
+                }
+            }
+            document.getElementById("result").innerText =
+                answer === 0 ? "Петя ямар ч тохиолдолд хожих боломжгүй" :
+                "Петя хожихын тулд эхэнд " + answer + " зоос авах ёстой";
+        }
+    </script>
+</body>
+</html>

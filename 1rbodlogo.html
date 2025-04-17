@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <h1>1 r bodlogo </h1>
+    <script>
+        var name = window.prompt("Enter your name:");
+        var reversed = "";
+
+        for (var i = name.length - 1; i >= 0; i--) {
+            reversed += name[i];
+        }
+
+        if (name.toLowerCase() === reversed.toLowerCase()) {
+            document.write(" Your name is a palindrome");
+        } else {
+            document.write(" Your name is not a palindrome");
+        }
+    </script>
+</body>
+</html>

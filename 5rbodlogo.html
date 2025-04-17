@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-р бодлого</title>
+</head>
+<body>
+    <h1>5-р бодлого</h1>
+    <p>Хүснэгтэнд байгаа элементүүдийг тэгш, сондгойгоор ялга</p>
+
+    <label>Хэдэн элемент оруулах вэ?</label>
+    <input type="number" id="n" step="1">
+    <button onclick="showNumber()">OK</button>
+
+    <p id="result"></p>
+
+    <script>
+        function showNumber() {
+            var n = parseInt(document.getElementById("n").value);
+            var arr = [];
+
+            for (var i = 0; i < n; i++) {
+                var value = parseInt(prompt((i + 1) + "-р элементийг оруулна уу:"));
+                arr.push(value);
+            }
+
+            var resultText = "";
+            for (var i = 0; i < n; i++) {
+                if (arr[i] % 2 == 0) {
+                    resultText += arr[i] + "  тэгш<br>";
+                } else {
+                    resultText += arr[i] + "  сондгой<br>";
+                }
+            }
+
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

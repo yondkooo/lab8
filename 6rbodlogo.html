@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тоотын байршлыг тодорхойлох</title>
+</head>
+<body>
+    <h2>Тоотын мэдээлэл</h2>
+    <label>Тоот оруулна уу: </label>
+    <input type="number" id="too">
+    <button onclick="findLocation()">Хайх</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findLocation() {
+            var number = parseInt(document.getElementById("too").value);
+
+            if (number < 1 || number > 108) {
+                document.getElementById("result").innerText = "Тоот 1-108 хооронд байх ёстой!";
+                return;
+            }
+
+            var oronSuutsPerOrts = 36;
+            var ailPerDawhar = 4;
+
+            var orts = Math.ceil(number / oronSuutsPerOrts);
+            var dotorDugeer = number - (orts - 1) * oronSuutsPerOrts;
+            var dawhar = Math.ceil(dotorDugeer / ailPerDawhar);
+            var haalganiiDugaar = ((dotorDugeer - 1) % 4) + 1;
+
+            document.getElementById("result").innerHTML = 
+                "Орц: " + orts + "<br>" +
+                "Давхар: " + dawhar + "<br>" +
+                "Хаалга: " + haalganiiDugaar;
+        }
+    </script>
+</body>
+</html>

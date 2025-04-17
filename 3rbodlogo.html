@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Анхны тоонд задлах</title>
+</head>
+<body>
+    <h1>3 дахь бодлого</h1>
+    <p>Гараас өгсөн тоог анхны тоонуудын нийлбэрт задал</p>
+
+    <script>
+        
+        function isPrime(n) {
+            if (n < 2) return false;
+            for (var i = 2; i * i <= n; i++) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+
+        var input = prompt("Тоог оруулна уу:");
+        var number = parseInt(input);
+        var result = "";
+
+        if (isNaN(number) || number < 2) {
+            document.write("2-оос их тоо оруулна уу.");
+        } else {
+            var temp = number;
+            var parts = [];
+
+            for (var i = 2; i <= temp; i++) {
+                while (isPrime(i) && temp >= i) {
+                    parts.push(i);
+                    temp -= i;
+                    break;
+                }
+            }
+
+            result = parts.join(" + ");
+            document.write(number + " = " + result);
+        }
+    </script>
+</body>
+</html>
