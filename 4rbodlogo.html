@@ -9,18 +9,18 @@
     <h1>4r bodlogo</h1>
     <p>chono 25km tsagiin hurdtai tuulai 18kmtsagiin hurdtai bol garaas ugsun zainaas heden minut heden secondiin daraa guitseh we </p>
     <script>
-        var chono=6.94;
-        var tuulai= 5;
-        var urt = window.prompt("garaas utga oruulna uu?");
-        var urt = parseInt(urt);
-        for(var i=0; i<urt; i++){
-            var chono = chono + 6.94;
-            var tuulai = tuulai + 5;
-            if(chono >= tuulai){
-                document.writeln("chono " + chono + " minut" + " tuulai " + tuulai + " minutn ywhad guitslee");
-                break;
-            }
-        }
+        let distance = prompt("Чоно, туулайн хоорондын зайг км-ээр оруулна уу:");
+        distance = parseFloat(distance);
+        var wolfSpeed = 25;
+        var rabbitSpeed = 18;
+        var speedDifference = wolfSpeed - rabbitSpeed;
+        var time = distance / speedDifference;
+ 
+        var totalMinutes = time * 60;
+        var minutes = Math.floor(totalMinutes);
+        var seconds = Math.floor((totalMinutes - minutes) * 60);
+ 
+        document.writeln("Чоно туулайг " + minutes + " минут " + seconds + " секундэд гүйцнэ.");
     </script>
 </body>
 </html>
